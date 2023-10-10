@@ -39,7 +39,7 @@ function step(stamptime: number) {
   if (current_time === undefined) {
     current_time = stamptime;
   }
-  let diff = stamptime - current_time;
+  const diff = stamptime - current_time;
   current_time = stamptime;
   counter_add_by_frame(diff);
   window.requestAnimationFrame(step);
