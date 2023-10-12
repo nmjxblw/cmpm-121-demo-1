@@ -35,7 +35,7 @@ const emoji_button = document.createElement("button") as HTMLButtonElement;
 emoji_button.innerHTML = `<em>click to get 1 💰</em><br/>
 <span style="font-size:10px;font-family:'Comic Sans MS';">It's the start of everything.</span>`;
 
-emoji_button.addEventListener("click", () => {
+emoji_button.addEventListener("mousedown", () => {
   money++;
 });
 app.append(emoji_button);
@@ -100,9 +100,9 @@ window.requestAnimationFrame(step);
 //step6
 //shortcut function for creating a button
 interface button_config {
-  emoji: any;
-  name: any;
-  description: any;
+  emoji?: string;
+  name?: string;
+  description?: any;
   price: number;
   growth_rate: number;
 }
@@ -133,7 +133,7 @@ function create_growth_button(button_config: button_config) {
       new_button.hidden = false;
     }
   });
-  new_button.addEventListener("click", () => {
+  new_button.addEventListener("mousedown", () => {
     if (!new_button.disabled) {
       money -= current_price;
       purchase_time++;
@@ -145,7 +145,7 @@ function create_growth_button(button_config: button_config) {
   return new_button;
 }
 const my_frist_button = create_growth_button({
-  emoji: "👨‍🌾",
+  emoji: "🐄",
   name: "Farm",
   description: "It can bring very little income to your city.",
   price: 10,
@@ -159,7 +159,7 @@ const my_second_button = create_growth_button({
   growth_rate: 2.0,
 });
 const my_third_button = create_growth_button({
-  emoji: "🏦",
+  emoji: "💵",
   name: "Bank",
   description: "Money becomes money!",
   price: 1000,
