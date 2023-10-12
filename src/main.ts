@@ -193,20 +193,21 @@ const button_array: button_config[] = [
     price: 1000,
     growth_rate: 50.0,
   },
-  // {
-  //   emoji: "🏠",
-  //   name: "House",
-  //   description: "The more population the more wealth.",
-  //   price: 10000,
-  //   growth_rate: 1500.0,
-  // },
-  // {
-  //   emoji: "🗿",
-  //   name: "Spectacle",
-  //   description: "Your city is renowned far and wide.",
-  //   price: 100000,
-  //   growth_rate: 50000.0,
-  // },
+  //step 10
+  {
+    emoji: "🏠",
+    name: "House",
+    description: "The more population the more wealth.",
+    price: 10000,
+    growth_rate: 1500.0,
+  },
+  {
+    emoji: "🗿",
+    name: "Spectacle",
+    description: "Your city is renowned far and wide.",
+    price: 100000,
+    growth_rate: 50000.0,
+  },
 ];
 let button_count = 0;
 button_array.forEach((element) => {
