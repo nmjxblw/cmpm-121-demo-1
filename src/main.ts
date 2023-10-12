@@ -121,10 +121,10 @@ function create_growth_button(button_config: button_config) {
     } ${button_config.emoji}:${purchase_time}</span><br/>
     <span style="font-size:13px;font-family:'Courier New';">costs ${current_price.toFixed(
       2,
-    )} 💰 to get ${button_config.growth_rate} 💰 /sec</span><br/>
+    )} 💰 to get ${button_config.growth_rate} 💰 /sec</span></em><br/>
     <span style="font-size:10px;font-family:'Comic Sans MS';">${
       button_config.description
-    }</span></em>`;
+    }</span>`;
   }
   update_inner_text();
   setInterval(() => {
@@ -144,27 +144,76 @@ function create_growth_button(button_config: button_config) {
   });
   return new_button;
 }
-const my_frist_button = create_growth_button({
-  emoji: "🐄",
-  name: "Farm",
-  description: "It can bring very little income to your city.",
-  price: 10,
-  growth_rate: 0.1,
+//step 8
+// const my_frist_button = create_growth_button({
+//   emoji: "🐄",
+//   name: "Farm",
+//   description: "It can bring very little income to your city.",
+//   price: 10,
+//   growth_rate: 0.1,
+// });
+// const my_second_button = create_growth_button({
+//   emoji: "🚂",
+//   name: "Transportation",
+//   description: "Everything is on track!",
+//   price: 100,
+//   growth_rate: 2.0,
+// });
+// const my_third_button = create_growth_button({
+//   emoji: "💵",
+//   name: "Bank",
+//   description: "Money becomes money!",
+//   price: 1000,
+//   growth_rate: 50.0,
+// });
+// app.append(my_frist_button);
+// app.append(my_second_button);
+// app.append(my_third_button);
+
+//step 9
+const button_array: button_config[] = [
+  {
+    emoji: "🐄",
+    name: "Farm",
+    description: "It can bring very little income to your city.",
+    price: 10,
+    growth_rate: 0.1,
+  },
+  {
+    emoji: "🚂",
+    name: "Transportation",
+    description: "Everything is on track!",
+    price: 100,
+    growth_rate: 2.0,
+  },
+  {
+    emoji: "💵",
+    name: "Bank",
+    description: "Money becomes money!",
+    price: 1000,
+    growth_rate: 50.0,
+  },
+  // {
+  //   emoji: "🏠",
+  //   name: "House",
+  //   description: "The more population the more wealth.",
+  //   price: 10000,
+  //   growth_rate: 1500.0,
+  // },
+  // {
+  //   emoji: "🗿",
+  //   name: "Spectacle",
+  //   description: "Your city is renowned far and wide.",
+  //   price: 100000,
+  //   growth_rate: 50000.0,
+  // },
+];
+let button_count = 0;
+button_array.forEach((element) => {
+  button_count++;
+  const new_button = create_growth_button(element);
+  app.append(new_button);
+  if (button_count % 4 == 3) {
+    new_line();
+  }
 });
-const my_second_button = create_growth_button({
-  emoji: "🚂",
-  name: "Transportation",
-  description: "Everything is on track!",
-  price: 100,
-  growth_rate: 2.0,
-});
-const my_third_button = create_growth_button({
-  emoji: "💵",
-  name: "Bank",
-  description: "Money becomes money!",
-  price: 1000,
-  growth_rate: 50.0,
-});
-app.append(my_frist_button);
-app.append(my_second_button);
-app.append(my_third_button);
